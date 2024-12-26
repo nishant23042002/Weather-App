@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div id="container">
+        <div class="h-screen w-screen flex" id="main-container">
+            <div class="w-[30%] h-full border-2 border-red-500" id="right-container">
+                <div class="p-6" id="content">
+                    <div class="flex justify-between items-center my-5" id="user_input">
+                        <input class="p-3 border-2 border-black rounded-xl text-lg w-full" type="text" placeholder="Search for places" id="input_value">
+                    </div>
+
+                    <div class="object-cover my-10" id="weather-icon">
+                        <img src="../images/sunny_weather.png" alt="#">
+                    </div>
+                    
+                    <div class="my-10">
+                        <h1 class="text-7xl font-thin my-5">25&deg;C</h1>
+                        <h1 class="font-thin my-5">Monday, 16:00</h1>
+                    </div>
+
+
+                    <hr>
+
+                    <div class="my-5" id="text-content">
+                        <div class="flex gap-3 justify-start items-center py-2" id="text1">
+                            <img src="../images/cloud.png" alt="#">
+                            <h2>Mostly Cloudy</h2>
+                        </div>
+                        <div class="flex gap-3 justify-start items-center py-2" id="text2">
+                            <img src="../images/rainny_cloud.png" alt="#">
+                            <h2>Rain - 30%</h2>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-36 border-2 border-black rounded-xl my-10" id="city-img">
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="h-screen w-[100%] border-2 border-yellow-500" id="left-container">
+
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
