@@ -16,7 +16,7 @@
 
 <body class="font-poppins">
     <div id="container">
-        <div class="md:h-screen md:w-screen md:flex bg-[#ebebeb]" id="main-container">
+        <div class="md:h-screen md:w-screen md:flex bg-blue-100" id="main-container">
             <div class="h-screen flex justify-center mx-10" id="left-container">
                 <div class="p-5" id="content">
                     <form class="max-w-md mx-auto">
@@ -24,35 +24,38 @@
                             class="text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div class="relative">
                             <input type="search" id="default-search"
-                                class="block w-full p-4 ps-7 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50"
+                                class="block w-full p-4 ps-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50"
                                 placeholder="Search City" required />
                             <button type="submit"
-                                class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 font-medium rounded-lg text-sm p-2" id="search-btn"><svg
-                                    class="w-4 h-4 text-white" aria-hidden="true" fill="none" viewBox="0 0 20 20">
+                                class="text-white absolute end-2.5 bottom-2.5 bg-blue-300 font-medium rounded-lg text-sm p-2"
+                                id="search-btn"><svg class="w-4 h-4 text-black font-bold" aria-hidden="true" fill="none"
+                                    viewBox="0 0 20 20">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                         stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                                </svg></button>
+                                </svg>
+                            </button>
                         </div>
                     </form>
-
-
-
+                    
+                    
+                    
                     <div>
                         <img src="../images/sunny_weather.png" alt="#" id="weather-icon">
                     </div>
-
-
-                    <div class="my-10">
+                    
+                    
+                    <div class="xsm:my-8" id="weather-info">
                         <h1 class="text-6xl font-medium my-5" id="temperature">25&deg;C</h1>
                         <h1 class="my-5 text-xl from-neutral-600" id="city">London,US</h1>
                         <h1 class="my-5 from-slate-600" id="feels-like">Feels Like : 30&deg;C</h1>
                     </div>
+                    
+                    <!------------- Loader --------------->
+                    <div class="flex justify-center items-center">
+                        <div class="w-full" id="loading"></div>
+                    </div>
 
-
-                    <hr>
-
-
-                    <div class="my-5" id="text-content">
+                    <div class="my-3" id="weather-info2">
                         <div class="flex gap-3 justify-start items-center py-2" id="text1">
                             <img src="../images/cloud.png" alt="#">
                             <h2 id="cloud">Mostly Cloudy</h2>
@@ -66,16 +69,16 @@
             </div>
 
 
-            <div class="md:h-screen w-full md:overflow-y-auto bg-[#FFFFFF]" id="right-container">
-                <div class="h-32 flex justify-between items-center border-b-2 border-black" id="header">
+            <div class="md:h-screen w-full md:overflow-y-auto bg-blue-200" id="right-container">
+                <div class="h-32 flex justify-between items-center border-b-2 border-blue-500" id="header">
 
                     <ul
-                        class="flex p-5 xsm:mx-12 mx-6 w-44 h-10 border-2 border-black items-center justify-between rounded-2xl font-bold text-lg cursor-pointer">
+                        class="flex p-5 xsm:mx-12 mx-6 w-44 h-10 border-2 border-blue-600 items-center justify-between rounded-2xl font-bold text-lg cursor-pointer">
                         <li>Today</li>
                         <li>Week</li>
                     </ul>
                     <ul
-                        class="flex p-5 xsm:mx-12 mx-6 w-28 h-10 border-2 border-black items-center justify-between rounded-2xl font-bold text-xl cursor-pointer">
+                        class="flex p-5 xsm:mx-12 mx-6 w-28 h-10 border-2 border-blue-600 items-center justify-between rounded-2xl font-bold text-xl cursor-pointer">
                         <li>&deg;C</li>
                         <li>&deg;F</li>
                     </ul>
@@ -84,7 +87,7 @@
 
                 <div id="mini-boxes">
                     <div class="flex flex-wrap w-full items-center justify-center p-10 gap-5 text-center font-bold">
-                        <div class="w-28 h-40 rounded-2xl py-3 transition-all cursor-pointer bg-[#FFFFFF] opacity-70 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl"
+                        <div class="w-28 h-40 rounded-2xl py-3 transition-all cursor-pointer bg-[#ebebeb] opacity-80 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl"
                             id="box1">
                             <h1>SUN</h1>
                             <div class="flex items-center justify-center py-3">
@@ -92,7 +95,7 @@
                             </div>
                             <h1>15&deg;</h1>
                         </div>
-                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-[#FFFFFF] opacity-70 hover:opacity-100 hover:translate-y-2 hover:shadow-xl"
+                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-[#ebebeb] opacity-70 hover:opacity-100 hover:translate-y-2 hover:shadow-xl"
                             id="box2">
                             <h1>MON</h1>
                             <div class="flex items-center justify-center py-3">
@@ -100,7 +103,7 @@
                             </div>
                             <h1>15&deg;</h1>
                         </div>
-                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-[#FFFFFF] opacity-70 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl"
+                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-[#ebebeb] opacity-70 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl"
                             id="box3">
                             <h1>TUE</h1>
                             <div class="flex items-center justify-center py-3">
@@ -108,7 +111,7 @@
                             </div>
                             <h1>15&deg;</h1>
                         </div>
-                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-[#FFFFFF] opacity-70 hover:opacity-100 hover:translate-y-2 hover:shadow-xl"
+                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-[#ebebeb] opacity-70 hover:opacity-100 hover:translate-y-2 hover:shadow-xl"
                             id="box4">
                             <h1>WED</h1>
                             <div class="flex items-center justify-center py-3">
@@ -116,7 +119,7 @@
                             </div>
                             <h1>15&deg;</h1>
                         </div>
-                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-[#FFFFFF] opacity-70 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl"
+                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-[#ebebeb] opacity-70 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl"
                             id="box5">
                             <h1>THR</h1>
                             <div class="flex items-center justify-center py-3">
@@ -124,7 +127,7 @@
                             </div>
                             <h1>15&deg;</h1>
                         </div>
-                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-[#FFFFFF] opacity-70 hover:opacity-100 hover:translate-y-2 hover:shadow-xl"
+                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-[#ebebeb] opacity-70 hover:opacity-100 hover:translate-y-2 hover:shadow-xl"
                             id="box6">
                             <h1>FRI</h1>
                             <div class="flex items-center justify-center py-3">
@@ -132,7 +135,7 @@
                             </div>
                             <h1>15&deg;</h1>
                         </div>
-                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-[#FFFFFF] opacity-70 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl"
+                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-[#ebebeb] opacity-70 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl"
                             id="box7">
                             <h1>SAT</h1>
                             <div class="flex items-center justify-center py-3">
@@ -149,56 +152,62 @@
                     <div class="p-2 mx-12 font-bold text-xl">
                         <h1>Today's Highlights</h1>
                     </div>
-                    <div class="m-5 p-5" id="highlights-content">
+                    <div class="p-5" id="highlights-content">
                         <div class="flex flex-wrap gap-10 font-bold text-center justify-center items-center"
                             id="highlight-boxes">
-                            <div class="w-40 xsm:w-52 p-3 rounded-3xl bg-[#FFFFFF] transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
-                                id="box1">
+                            <div class="w-52 h-64 p-3 rounded-3xl bg-[#ebebeb] transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
+                                id="boxes1">
                                 <h1>Sea Level</h1>
-                                <div class="flex items-center justify-center py-2">
+                                <div id="loader2"></div>
+                                <div class="flex flex-col gap-2 items-center justify-center py-3" id="box-info">
                                     <img src="../images/sea-level_8740155.png" alt="#">
+                                    <h1 class="pt-5" id="sea-level">5</h1>
                                 </div>
-                                <h1 id="sea-level">5</h1>
                             </div>
-                            <div class="w-40 xsm:w-52 p-3 rounded-3xl bg-[#FFFFFF] transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
-                                id="box2">
+                            <div class="w-52 h-64 p-3 rounded-3xl bg-[#ebebeb] transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
+                                id="boxes2">
                                 <h1>WIND STATUS</h1>
-                                <div class="flex items-center justify-center py-2">
+                                <div id="loader2"></div>
+                                <div class="flex flex-col gap-2 items-center justify-center py-2" id="box-info">
                                     <img src="../images/windy.png" alt="#">
+                                    <h1 class="pt-5" id="wind-status">5</h1>
                                 </div>
-                                <h1 id="wind-status">5</h1>
                             </div>
-                            <div class="w-40 xsm:w-52 p-3 rounded-3xl bg-[#FFFFFF] transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
-                                id="box3">
+                            <div class="w-52 h-64 p-3 rounded-3xl bg-[#ebebeb] transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
+                                id="boxes3">
                                 <h1>SunRise / SunSet</h1>
-                                <div class="flex items-center justify-center py-2">
+                                <div id="loader2"></div>
+                                <div class="flex flex-col gap-2 items-center justify-center py-2" id="box-info">
                                     <img src="../images/sunrise.png" alt="#">
+                                    <h1 class="pt-5" id="sunrise-sunset">5</h1>
                                 </div>
-                                <h1 id="sunrise-sunset">5</h1>
                             </div>
-                            <div class="w-40 xsm:w-52 p-3 rounded-3xl bg-[#FFFFFF] transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
-                                id="box4">
+                            <div class="w-52 h-64 p-3 rounded-3xl bg-[#ebebeb] transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
+                                id="boxes4">
                                 <h1>HUMIDITY</h1>
-                                <div class="flex items-center justify-center py-2">
+                                <div id="loader2"></div>
+                                <div class="flex flex-col gap-2 items-center justify-center py-2" id="box-info">
                                     <img src="../images/humidity.png" alt="#">
+                                    <h1 class="pt-5" id="humidity">5</h1>
                                 </div>
-                                <h1 id="humidity">5</h1>
                             </div>
-                            <div class="w-40 xsm:w-52 p-3 rounded-3xl bg-[#FFFFFF] transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
-                                id="box5">
+                            <div class="w-52 h-64 p-3 rounded-3xl bg-[#ebebeb] ransition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
+                                id="boxes5">
                                 <h1>VISIBILITY</h1>
-                                <div class="flex items-center justify-center py-2">
+                                <div id="loader2"></div>
+                                <div class="flex flex-col gap-2 items-center justify-center py-2" id="box-info">
                                     <img src="../images/visibility.png" alt="#">
+                                    <h1 class="pt-5" id="visibility">5</h1>
                                 </div>
-                                <h1 id="visibility">5</h1>
                             </div>
-                            <div class="w-40 xsm:w-52 p-3 rounded-3xl bg-[#FFFFFF] transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
-                                id="box6">
+                            <div class="w-52 h-64 p-3 rounded-3xl bg-[#ebebeb] transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
+                                id="boxes6">
                                 <h1>Max Temperature</h1>
-                                <div class="flex items-center justify-center py-2">
+                                <div id="loader2"></div>
+                                <div class="flex flex-col gap-2 items-center justify-center py-2" id="box-info">
                                     <img src="../images/max_temp.png" alt="#">
+                                    <h1 class="pt-5" id="max_temp">5</h1>
                                 </div>
-                                <h1 id="max_temp">5</h1>
                             </div>
                         </div>
                     </div>

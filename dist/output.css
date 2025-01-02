@@ -612,6 +612,10 @@ video {
   border-width: 0;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .absolute {
   position: absolute;
 }
@@ -626,10 +630,6 @@ video {
 
 .end-2\.5 {
   inset-inline-end: 0.625rem;
-}
-
-.m-5 {
-  margin: 1.25rem;
 }
 
 .mx-10 {
@@ -652,9 +652,9 @@ video {
   margin-right: auto;
 }
 
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .my-5 {
@@ -668,6 +668,10 @@ video {
 
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-10 {
@@ -686,6 +690,10 @@ video {
   height: 10rem;
 }
 
+.h-64 {
+  height: 16rem;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -698,12 +706,12 @@ video {
   width: 1rem;
 }
 
-.w-40 {
-  width: 10rem;
-}
-
 .w-44 {
   width: 11rem;
+}
+
+.w-52 {
+  width: 13rem;
 }
 
 .w-full {
@@ -716,6 +724,10 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .flex-wrap {
@@ -740,6 +752,10 @@ video {
 
 .gap-10 {
   gap: 2.5rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-3 {
@@ -774,9 +790,14 @@ video {
   border-bottom-width: 2px;
 }
 
-.border-black {
+.border-blue-500 {
   --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+  border-color: rgb(59 130 246 / var(--tw-border-opacity, 1));
+}
+
+.border-blue-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(37 99 235 / var(--tw-border-opacity, 1));
 }
 
 .border-gray-300 {
@@ -784,19 +805,24 @@ video {
   border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
 }
 
-.bg-\[\#FFFFFF\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[\#ebebeb\] {
   --tw-bg-opacity: 1;
   background-color: rgb(235 235 235 / var(--tw-bg-opacity, 1));
 }
 
-.bg-blue-700 {
+.bg-blue-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity, 1));
+}
+
+.bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity, 1));
+}
+
+.bg-blue-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 197 253 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gray-50 {
@@ -846,8 +872,12 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.ps-7 {
-  padding-inline-start: 1.75rem;
+.ps-3 {
+  padding-inline-start: 0.75rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
 }
 
 .text-center {
@@ -890,6 +920,11 @@ video {
   text-transform: capitalize;
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity, 1));
@@ -904,6 +939,10 @@ video {
   opacity: 0.7;
 }
 
+.opacity-80 {
+  opacity: 0.8;
+}
+
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -912,6 +951,81 @@ video {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+/* 
+#loading {
+    width: 1rem;
+    height: 1rem;
+    border: 5px solid black;
+    border-top: 6px solid white;
+    border-radius: 100%;
+    margin: auto;
+    visibility: hidden;
+    animation: spin 1s infinite linear;
+}
+#loading.display {
+    visibility: visible;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} */
+
+#loading {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 10px solid;
+  border-color: rgba(128, 125, 125, 0.15) rgba(255, 255, 255, 0.25) rgba(119, 116, 116, 0.35) rgba(121, 119, 119, 0.5);
+  box-sizing: border-box;
+  visibility: hidden;
+  animation: rotation 1s linear infinite;
+}
+
+#loading.display{
+  visibility: visible;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#loader2 {
+  width: 185px;
+  height: 210px;
+  background:
+        linear-gradient(0.25turn, transparent, #FFF, transparent),
+        linear-gradient(#DDD, #DDD),
+        linear-gradient(#DDD, #DDD),
+        linear-gradient(#DDD, #DDD);
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: 215px 220px, 215px 130px, 100px 15px, 150px 15px;
+  background-position: -215px 0, 0 0, 15px 150px, 15px 180px;
+  animation: loading 1.5s infinite;
+  border-radius: 20px;
+  display: none;
+}
+
+#loader2.display{
+  display: block;
+}
+
+@keyframes loading {
+  to {
+    background-position: 215px 0, 0 0, 15px 150px, 15px 180px;
+  }
 }
 
 .hover\:-translate-x-3:hover {
@@ -945,8 +1059,9 @@ video {
     margin-right: 3rem;
   }
 
-  .xsm\:w-52 {
-    width: 13rem;
+  .xsm\:my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
