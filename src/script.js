@@ -1,26 +1,40 @@
-const searchBtn = document.getElementById("search-btn");
-// const apiKEY = "5d6a4554cfbbef26f96f4b9361fc3e28";
-// const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=Roha";
+const searchField = document.querySelector("#default-search");
+const searchBtn = document.querySelector("#search-btn");
+const apiKEY = "&appid=5d6a4554cfbbef26f96f4b9361fc3e28"
+const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
 
-async function checkWeather() {
-    const response = await fetch("https://api.weatherapi.com/v1/current.json?key=229a2845ab234ada9c1195246242512&q=Roha");
+async function checkWeather(city) {
+    
+    const response = await fetch(apiURL + city + apiKEY);
     const data = await response.json();
     console.log(data)
-    document.querySelector("#city").innerHTML = `${data.location.name}, ${data.location.region}`;
-    document.querySelector("#day-time").innerHTML = `<span class="font-bold">Time : </span> ${data.location.localtime.slice(10)}`
-    document.querySelector("#temperature").innerHTML = `${data.current.temp_c}&deg;C`;
-    // document.querySelector("#weather-icon").src = data.current.condition.icon
-    document.querySelector("#cloud").innerHTML = `Cloud : ${data.current.cloud}`;
-    document.querySelector("#rain").innerHTML = `Rain : ${data.current.precip_in}%`;
-    document.querySelector("#uv-index").innerHTML = data.current.uv;
-    document.querySelector("#wind-status").innerHTML = `${data.current.wind_kph} Kph`;
-    document.querySelector("#humidity").innerHTML = `${data.current.humidity} %rh`;
-    document.querySelector("#visibility").innerHTML = `${data.current.vis_km} km`;
-    document.querySelector("#heatindex_c").innerHTML = `${data.current.heatindex_c} &deg;C`;
-    document.querySelector("#pressure_in").innerHTML = `${data.current.pressure_in} in Hg`;
+    document.querySelector("#city").innerHTML = `${data.name}, ${data.sys.country}`;
+    document.querySelector("#feels-like").innerHTML = `<span class="font-bold">Feels Like : </span> ${Math.round(data.main.feels_like)} &deg;C`
+    document.querySelector("#temperature").innerHTML = `${Math.round(data.main.temp)}&deg;C`;
+    document.querySelector("#cloud").innerHTML = `Cloud : ${data.clouds.all} %`;
+    document.querySelector("#rain").innerHTML = `Rain : ${data.weather[0].description}`;
+    document.querySelector("#sea-level").innerHTML = `${data.main.sea_level} hPa`;
+    document.querySelector("#wind-status").innerHTML = `${data.wind.speed} Kph`;
+    document.querySelector("#humidity").innerHTML = `${data.main.humidity} %rh`;
+    document.querySelector("#visibility").innerHTML = `${data.visibility/1000} km`;
+    document.querySelector("#max_temp").innerHTML = `${Math.round(data.main.temp_max)} &deg;C`;
+    let unix = data.sys.sunrise;
+    let unix2 = data.sys.sunset;
+    let sunrise = new Date(unix * 1000);
+    let sunset = new Date(unix2 * 1000);
+    document.querySelector("#sunrise-sunset").innerHTML = `${sunrise.toString().slice(15,24)} / ${sunset.toString().slice(15,24)}`
 }
 
-checkWeather();
-searchBtn.addEventListener("click", function () {
-    console.log("clicked")
+
+
+
+
+
+
+
+
+searchBtn.addEventListener("click", (e)=> {
+    e.preventDefault();
+    console.log(searchField.value)
+    checkWeather(searchField.value);
 })
