@@ -1,35 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-#loading {
-    width: 1rem;
-    height: 1rem;
-    border: 5px solid black;
-    border-top: 6px solid white;
-    border-radius: 100%;
-    margin: auto;
-    visibility: hidden;
-    animation: spin 1s infinite linear;
-}
-#loading.display {
-    visibility: visible;
-}
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-} */
 
+
+/* Circle Animation for the left container  */
 #loading {
     width: 48px;
     height: 48px;
     border-radius: 50%;
     border: 10px solid;
-    border-color: rgba(128, 125, 125, 0.15) rgba(255, 255, 255, 0.25) rgba(119, 116, 116, 0.35) rgba(121, 119, 119, 0.5);
+    border-color: rgb(102, 184, 238) rgba(7, 86, 204, 0.25) rgba(146, 184, 235, 0.35) rgba(56, 98, 236, 0.5);
     box-sizing: border-box;
     visibility: hidden;
     animation: rotation 1s linear infinite;
@@ -45,18 +25,62 @@
       transform: rotate(360deg);
    }
 } 
- 
 
+
+
+
+
+
+
+
+
+
+
+
+ 
+/* Loader for small cards */
+#loader01, #loader02, #loader03, #loader04, #loader05, #loader06, #loader07 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-top: 3px solid #141414;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  display: none;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
   
 
-#loader2 {
-    width: 185px;
+
+
+
+
+
+
+
+
+
+
+
+
+/* Skeleton Animation for the cards */
+#loader2, #loader3, #loader4, #loader5, #loader6{
+    width: 180px;
     height: 210px;
     background:
         linear-gradient(0.25turn, transparent, #FFF, transparent),
-        linear-gradient(#DDD, #DDD),
-        linear-gradient(#DDD, #DDD),
-        linear-gradient(#DDD, #DDD);
+        linear-gradient(#a4d9fc, #a4d9fc),
+        linear-gradient(#a4d9fc, #a4d9fc),
+        linear-gradient(#a4d9fc, #a4d9fc);
     background-color: #fff;
     background-repeat: no-repeat;
     background-size: 215px 220px, 215px 130px, 100px 15px, 150px 15px;
@@ -66,9 +90,6 @@
     display: none;
 }
 
-#loader2.display{
-    display: block;
-}
 @keyframes loading {
   to {
     background-position: 215px 0, 0 0, 15px 150px, 15px 180px;
