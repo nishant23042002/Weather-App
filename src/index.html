@@ -19,10 +19,11 @@
         <div class="md:h-screen md:w-screen md:flex bg-blue-100" id="main-container">
             <div class="h-screen flex justify-center mx-10" id="left-container">
                 <div class="p-5" id="content">
-                    <form class="max-w-md mx-auto">
+                    <form class="max-w-md mx-auto my-3">
                         <label for="default-search"
                             class="text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div class="relative">
+                            <h1 id="error"></h1>
                             <input type="search" id="default-search"
                                 class="block w-full p-4 ps-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50"
                                 placeholder="Search City" required />
@@ -36,20 +37,18 @@
                             </button>
                         </div>
                     </form>
-                    
-                    
-                    
-                    <div class="my-10">
-                        <img src="../images/sunny_weather.png" alt="#" id="weather-icon">
+
+                    <div id="weather-info">
+                        <img src="../images/sunny_weather.png" alt="#" id="weather-icon" width="200px">
                     </div>
-                    
-                    
-                    <div class="xsm:my-8 flex flex-col" id="weather-info">
-                        <h1 class="text-6xl font-medium my-5" id="temperature">25&deg;C</h1>
+
+
+                    <div class="xsm:my-8" id="weather-info1">
+                        <h1 class="text-5xl font-medium my-5" id="temperature">25&deg;C</h1>
                         <h1 class="my-5 text-xl from-neutral-600" id="city">London,US</h1>
-                        <h1 class="text-xl from-neutral-600" id="time"></h1>
+                        <h1 class="text-base from-neutral-600" id="time"></h1>
                     </div>
-                    
+
                     <!------------- Loader --------------->
                     <div class="flex justify-center items-center">
                         <div class="w-full" id="loading"></div>
@@ -58,7 +57,7 @@
                     <div class="my-3" id="weather-info2">
                         <div class="flex gap-3 justify-start items-center py-2" id="text1">
                             <img src="../images/cloud.png" alt="#">
-                            <h2 id="cloud">Mostly Cloudy</h2>
+                            <h2 id="cloud">Clouds - 5%</h2>
                         </div>
                         <div class="flex gap-3 justify-start items-center py-2" id="text2">
                             <img src="../images/rainny_cloud.png" alt="#">
@@ -69,101 +68,95 @@
             </div>
 
 
-            <div class="md:h-screen w-full md:overflow-y-auto bg-[#FFFFFF]" id="right-container">
-                <div class="h-32 flex justify-between items-center" id="header">
-                    <div class="p-3 text-center w-full">
-                        <h1 class="text-center text-xl font-bold">Today's Weather</h1>
+            <div class="md:h-screen w-full md:overflow-y-auto bg-blue-300" id="right-container">
+                <div class="h-32 flex flex-nowrap justify-center items-center bg-blue-500" id="header">
+                    <div class="p-3 bg-blue-500">
+                        <h1 class="text-3xl font-bold text-white">Weather DashBoard</h1>
                     </div>
                 </div>
-
-
                 <div class="py-8 border-b-4 border-blue-600" id="mini-boxes">
-                    <div class="flex flex-wrap w-full items-center justify-center p-10 gap-5 text-center font-bold">
-                        <div class="w-28 h-40 rounded-2xl py-3 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl">
-                            <div class="w-full flex items-center justify-center">
-                                <div id="loader01"></div>
-                            </div>
+                    <h1 class="text-center text-xl font-bold">Today's Weather</h1>
+                    <div class="flex flex-wrap w-full items-center justify-center p-10 gap-5 text-center font-bold"
+                        id="box-content">
+                        <div
+                            class="w-28 h-40 rounded-2xl py-3 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl">
+
                             <div id="box1">
                                 <h5>Visibility</h5>
                                 <div class="flex items-center justify-center py-3">
                                     <img src="../images/visibility.png" alt="#">
                                 </div>
-                                <h1 id="visibility">1 km</h1>
+                                <h1 id="visibility">Km</h1>
                             </div>
                         </div>
-                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:translate-y-2 hover:shadow-xl">
-                            <div class="w-full flex items-center justify-center">
-                                <div id="loader02"></div>
-                            </div>
+                        <div
+                            class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:translate-y-2 hover:shadow-xl">
+
                             <div id="box2">
                                 <h1>Sea Level</h1>
                                 <div class="flex items-center justify-center py-3">
                                     <img src="../images/sea_level.png" alt="#">
                                 </div>
-                                <h1 id="sea_level"></h1>
+                                <h1 id="sea_level">hPa</h1>
                             </div>
                         </div>
-                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl">
-                            <div class="w-full flex items-center justify-center">
-                                <div id="loader03"></div>
-                            </div>
+                        <div
+                            class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl">
+
                             <div id="box3">
                                 <h1>Wind Gust</h1>
                                 <div class="flex items-center justify-center py-3">
                                     <img src="../images/nature.png" alt="#">
                                 </div>
-                                <h1 id="wind_gust"></h1>
+                                <h1 id="wind_gust">m/s</h1>
                             </div>
                         </div>
-                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:translate-y-2 hover:shadow-xl">
-                            <div class="w-full flex items-center justify-center">
-                                <div id="loader04"></div>
-                            </div>
+                        <div
+                            class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:translate-y-2 hover:shadow-xl">
+
                             <div id="box4">
                                 <h1 class="from-slate-600">Feels Like</h1>
                                 <div class="flex items-center justify-center py-3">
                                     <img src="../images/feels_like.png" alt="#">
                                 </div>
-                                <h1 id="feels-like1">15&deg;</h1>
+                                <h1 id="feels_like">&deg;C</h1>
                             </div>
                         </div>
-                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl">
-                            <div class="w-full flex items-center justify-center">
-                                <div id="loader05"></div>
-                            </div>
+                        <div
+                            class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl">
+
                             <div id="box5">
                                 <h1>Sunrise</h1>
                                 <div class="flex items-center justify-center py-3">
                                     <img src="../images/sunrise_9058186.png" alt="#">
                                 </div>
-                                <h1 id="sunrise"></h1>
+                                <h1 id="sunrise">AM</h1>
                             </div>
                         </div>
-                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:translate-y-2 hover:shadow-xl">
-                            <div class="w-full flex items-center justify-center">
-                                <div id="loader06"></div>
-                            </div>
+                        <div
+                            class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:translate-y-2 hover:shadow-xl">
+
                             <div id="box6">
                                 <h1>Sunset</h1>
                                 <div class="flex items-center justify-center py-3">
                                     <img src="../images/sunset.png" alt="#">
                                 </div>
-                                <h1 id="sunset"></h1>
+                                <h1 id="sunset">PM</h1>
                             </div>
                         </div>
-                        <div class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl">
-                            <div class="w-full flex items-center justify-center">
-                                <div id="loader07"></div>
-                            </div>
+                        <div
+                            class="w-28 h-40 rounded-2xl py-2 transition-all cursor-pointer bg-blue-100 border-2 border-blue-600 opacity-90 hover:opacity-100 hover:-translate-y-2 hover:shadow-xl">
+
                             <div id="box7">
                                 <h1>Weather</h1>
                                 <div class="flex items-center justify-center py-3">
                                     <img src="../images/weather_status.png" alt="#">
                                 </div>
-                                <h1 id="weather">Rain</h1>
+                                <h1 id="weather_status">Status</h1>
                             </div>
                         </div>
                     </div>
+                    <div id="loading2"></div>
                 </div>
 
 
@@ -173,69 +166,11 @@
                         <h1 class="text-center">5-Days Forecast</h1>
                     </div>
                     <div class="p-5" id="highlights-content">
-                        <div class="flex flex-wrap gap-10 font-bold text-center justify-center items-center py-5"
+                        <div class="flex flex-wrap gap-10 text-center justify-center items-center py-5"
                             id="highlight-boxes">
-                            <div class="w-52 h-64 p-3 rounded-3xl bg-blue-100 border-2 border-blue-600 transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
-                                id="boxes1">
-                                <h1 id="day1">Day 1</h1>
-                                <div id="loader2"></div>
-                                <div class="flex flex-col gap-2 items-center justify-center py-3" id="box-info">
-                                    <img src="../images/clouds-sun.png" alt="#">
-                                    <h1 class="pt-2" id="temp_day1">Temp :</h1>
-                                    <h1 id="wind-status1">Wind :</h1>
-                                    <h1 id="humidity1">Humidity :</h1>
-                                    
-                                </div>
+                            <div class="flex gap-5 flex-wrap items-center justify-center py-3" id="box-info">
+
                             </div>
-                            <div class="w-52 h-64 p-3 rounded-3xl bg-blue-100 border-2 border-blue-600 transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
-                                id="boxes2">
-                                <h1 id="day2">Day 2</h1>
-                                <div id="loader3"></div>
-                                <div class="flex flex-col gap-2 items-center justify-center py-2" id="box-info2">
-                                    <img src="../images/cloud_thunder.png" alt="#">
-                                    <h1 class="pt-2" id="temp_day2">Temp :</h1>
-                                    <h1 id="wind-status2">Wind :</h1>
-                                    <h1 id="humidity2">Humidity :</h1>
-                                   
-                                </div>
-                            </div>
-                            <div class="w-52 h-64 p-3 rounded-3xl bg-blue-100 border-2 border-blue-600 transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
-                                id="boxes3">
-                                <h1 id="day3">Day 3</h1>
-                                <div id="loader4"></div>
-                                <div class="flex flex-col gap-2 items-center justify-center py-2" id="box-info3">
-                                    <img src="../images/clouds-sun.png" alt="#">
-                                    <h1 class="pt-2" id="temp_day3">Temp :</h1>
-                                    <h1 id="wind-status3">Wind :</h1>
-                                    <h1 id="humidity3">Humidity :</h1>
-                                    
-                                </div>
-                            </div>
-                            <div class="w-52 h-64 p-3 rounded-3xl bg-blue-100 border-2 border-blue-600 transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
-                                id="boxes4">
-                                <h1 id="day4">Day 4</h1>
-                                <div id="loader5"></div>
-                                <div class="flex flex-col gap-2 items-center justify-center py-2" id="box-info4">
-                                    <img src="../images/weather.png" alt="#">
-                                    <h1 class="pt-2" id="temp_day4">Temp :</h1>
-                                    <h1 id="wind-status4">Wind :</h1>
-                                    <h1 id="humidity4">Humidity :</h1>
-                                    
-                                </div>
-                            </div>
-                            <div class="w-52 h-64 p-3 rounded-3xl bg-blue-100 border-2 border-blue-600 ransition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
-                                id="boxes5">
-                                <h1 id="day5">Day 5</h1>
-                                <div id="loader6"></div>
-                                <div class="flex flex-col gap-2 items-center justify-center py-2" id="box-info5">
-                                    <img src="../images/sunny.png" alt="#">
-                                    <h1 class="pt-2" id="temp_day5">Temp :</h1>
-                                    <h1 id="wind-status5">Wind :</h1>
-                                    <h1 id="humidity5">Humidity :</h1>
-                                
-                                </div>
-                            </div>
-                            
                         </div>
                     </div>
                 </div>

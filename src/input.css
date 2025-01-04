@@ -2,54 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* Circle Animation for the left container  */
 #loading {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 10px solid;
-    border-color: rgb(102, 184, 238) rgba(7, 86, 204, 0.25) rgba(146, 184, 235, 0.35) rgba(56, 98, 236, 0.5);
-    box-sizing: border-box;
-    visibility: hidden;
-    animation: rotation 1s linear infinite;
+  width: 175px;
+  height: 70px;
+  display: block;
+  margin: auto;
+  background-image: radial-gradient(circle 25px at 25px 25px, #87c3fc 100%, transparent 0), radial-gradient(circle 50px at 50px 50px, #64a3df 100%, transparent 0), radial-gradient(circle 25px at 25px 25px, #32acf3 100%, transparent 0), linear-gradient(#4d9cdd 50px, transparent 0);
+  background-size: 50px 50px, 100px 76px, 50px 50px, 120px 40px;
+  background-position: 0px 30px, 37px 0px, 122px 30px, 25px 40px;
+  background-repeat: no-repeat;
+  position: relative;
+  box-sizing: border-box;
+  visibility: hidden;
 }
-#loading.display{
-      visibility: visible;
-}
-  @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-   }
-} 
-
-
-
-
-
-
-
-
-
-
-
-
- 
-/* Loader for small cards */
-#loader01, #loader02, #loader03, #loader04, #loader05, #loader06, #loader07 {
-  width: 30px;
-  height: 30px;
+#loading::after {
+  content: '';  
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 20px;
+  position: absolute;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  border-top: 3px solid #141414;
-  border-right: 3px solid transparent;
+  border: 5px solid transparent;
+  border-color: #ffffff transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-  display: none;
 }
-
+#loading.display{
+  visibility: visible;
+}
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -58,7 +41,6 @@
     transform: rotate(360deg);
   }
 } 
-  
 
 
 
@@ -66,32 +48,42 @@
 
 
 
-
-
-
-
-
-
-/* Skeleton Animation for the cards */
-#loader2, #loader3, #loader4, #loader5, #loader6{
-    width: 180px;
-    height: 210px;
-    background:
-        linear-gradient(0.25turn, transparent, #FFF, transparent),
-        linear-gradient(#a4d9fc, #a4d9fc),
-        linear-gradient(#a4d9fc, #a4d9fc),
-        linear-gradient(#a4d9fc, #a4d9fc);
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-size: 215px 220px, 215px 130px, 100px 15px, 150px 15px;
-    background-position: -215px 0, 0 0, 15px 150px, 15px 180px;
-    animation: loading 1.5s infinite;
-    border-radius: 20px;
-    display: none;
+#loading2 {
+  width: 175px;
+  height: 70px;
+  display: block;
+  margin: auto;
+  background-image: radial-gradient(circle 25px at 25px 25px, #87c3fc 100%, transparent 0), radial-gradient(circle 50px at 50px 50px, #64a3df 100%, transparent 0), radial-gradient(circle 25px at 25px 25px, #32acf3 100%, transparent 0), linear-gradient(#4d9cdd 50px, transparent 0);
+  background-size: 50px 50px, 100px 76px, 50px 50px, 120px 40px;
+  background-position: 0px 30px, 37px 0px, 122px 30px, 25px 40px;
+  background-repeat: no-repeat;
+  position: relative;
+  box-sizing: border-box;
+  visibility: hidden;
 }
-
-@keyframes loading {
-  to {
-    background-position: 215px 0, 0 0, 15px 150px, 15px 180px;
+#loading2::after {
+  content: '';  
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 20px;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-color: #ffffff transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+#loading2.display{
+  visibility: visible;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
   }
-}
+  100% {
+    transform: rotate(360deg);
+  }
+} 
