@@ -47,8 +47,5 @@ This project is a simple, responsive weather forecast application built using **
 ## Future Enhancements 🚀
 - Add support for **hourly weather updates**.
 - Introduce additional **animations** for a better user experience.
-- Include **multi-language support** for global users.
 
----
 
-Feel free to contribute or suggest improvements! 😊
