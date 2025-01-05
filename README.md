@@ -8,7 +8,7 @@ Features 🌟
 Intuitive UI designed with Tailwind CSS.
 Fully responsive for devices like desktops, iPads, and iPhones.
 <br/>
-3. Weather Forecast
+2. Weather Forecast
 Search weather by city name.
 Fetch weather using the current location.
 Displays key weather details:
@@ -17,7 +17,7 @@ Humidity
 Wind speed
 Weather conditions (e.g., sunny, cloudy, rainy) with icons.
 <br/>
-4. Extended Forecast
+3. Extended Forecast
 View a 5-day weather forecast with details like:
 Date
 Weather icon
@@ -25,12 +25,12 @@ Temperature
 Wind speed
 Humidity
 <br/>
-5. Enhanced User Interaction
+4. Enhanced User Interaction
 Dropdown menu for recently searched cities (stored in local/session storage).
 Input validation to handle invalid or empty queries.
 Event listeners for seamless updates based on user actions.
 <br/>
-6. Error Handling
+5. Error Handling
 Graceful handling of API errors with user-friendly error messages.
 <br />
 Technologies Used 🛠️
