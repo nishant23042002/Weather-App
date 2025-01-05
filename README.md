@@ -48,4 +48,7 @@ This project is a simple, responsive weather forecast application built using **
 - Add support for **hourly weather updates**.
 - Introduce additional **animations** for a better user experience.
 
+## Screenshots 📸
 
+### Main Interface
+![Weather Forecast App Screenshot](./images/screenshot.png)
