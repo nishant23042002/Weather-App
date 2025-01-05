@@ -11,7 +11,6 @@ Fully responsive for devices like desktops, iPads, and iPhones.
 <br/>
 3. Weather Forecast
 Search weather by city name.
-Fetch weather using the current location.
 <br/>
 Displays key weather details:
 <br/>
