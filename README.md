@@ -1,5 +1,6 @@
 #Weather Forecast App 🌦️
 This project is a simple, responsive weather forecast application built using HTML, Tailwind CSS, and JavaScript. It integrates with a weather API to provide real-time weather information and extended forecasts for different locations. Users can search for weather data by city
+<br />
 ##Features 🌟 
 1. User-Friendly Interface
 Intuitive UI designed with Tailwind CSS.
