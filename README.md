@@ -1,4 +1,4 @@
-<h1>Weather Forecast App 🌦️<h1 />
+<h1>Weather Forecast App 🌦️<h1/>
 <br />
 <p>This project is a simple, responsive weather forecast application built using HTML, Tailwind CSS, and JavaScript. It integrates with a weather API to provide real-time weather information and extended forecasts for different locations. Users can search for weather data by city<p/>
 <br />
