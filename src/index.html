@@ -18,8 +18,7 @@
     <div id="container">
         <div class="md:h-screen md:w-screen md:flex bg-blue-100" id="main-container">
             <div class="h-screen flex justify-center mx-10" id="left-container">
-                <div class="p-5" id="content">
-                    <!-- <form class="max-w-md mx-auto my-3"> -->
+                <div class="p-5" id="content">                    
                         <label for="default-search"
                             class="text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div class="relative">
@@ -42,7 +41,6 @@
                                 <option class="outline-none" value="">Select a recent city</option>
                             </select>
                         </div>
-                    <!-- </form> -->
 
                     <div id="weather-info">
                         <img src="../images/sunny_weather.png" alt="#" id="weather-icon" width="200px">
@@ -50,8 +48,8 @@
 
 
                     <div class="xsm:my-8" id="weather-info1">
-                        <h1 class="text-5xl font-medium my-5" id="temperature">25&deg;C</h1>
-                        <h1 class="my-5 text-xl from-neutral-600" id="city">London,US</h1>
+                        <h1 class="text-4xl font-medium my-5" id="temperature">Temp &deg;C</h1>
+                        <h1 class="my-5 text-xl from-neutral-600" id="city">City, Country</h1>
                         <h1 class="text-base from-neutral-600" id="time"></h1>
                     </div>
 
@@ -63,11 +61,11 @@
                     <div class="my-3" id="weather-info2">
                         <div class="flex gap-3 justify-start items-center py-2" id="text1">
                             <img src="../images/cloud.png" alt="#">
-                            <h2 id="cloud">Clouds - 5%</h2>
+                            <h2 id="cloud">Clouds - %</h2>
                         </div>
                         <div class="flex gap-3 justify-start items-center py-2" id="text2">
                             <img src="../images/rainny_cloud.png" alt="#">
-                            <h2 class="capitalize" id="rain">rain - 30%</h2>
+                            <h2 class="capitalize" id="rain">rain -  %</h2>
                         </div>
                     </div>
                 </div>

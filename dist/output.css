@@ -642,11 +642,6 @@ video {
   margin-right: 3rem;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -705,10 +700,6 @@ video {
   width: 100%;
 }
 
-.max-w-md {
-  max-width: 28rem;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -765,6 +756,14 @@ video {
   border-radius: 0.5rem;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -785,6 +784,16 @@ video {
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+}
+
+.border-blue-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity, 1));
 }
 
 .bg-blue-100 {
@@ -881,9 +890,9 @@ video {
   line-height: 2.25rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-base {
@@ -986,50 +995,6 @@ video {
 }
 
 #loading.display{
-  visibility: visible;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-#loading2 {
-  width: 175px;
-  height: 70px;
-  display: block;
-  margin: auto;
-  background-image: radial-gradient(circle 25px at 25px 25px, #cac8c8 100%, transparent 0), radial-gradient(circle 50px at 50px 50px, #d6d4d4 100%, transparent 0), radial-gradient(circle 25px at 25px 25px, #b3acac 100%, transparent 0), linear-gradient(#c9c3c3 50px, transparent 0);
-  background-size: 50px 50px, 100px 76px, 50px 50px, 120px 40px;
-  background-position: 0px 30px, 37px 0px, 122px 30px, 25px 40px;
-  background-repeat: no-repeat;
-  position: relative;
-  box-sizing: border-box;
-  visibility: hidden;
-}
-
-#loading2::after {
-  content: '';
-  left: 0;
-  right: 0;
-  margin: auto;
-  bottom: 20px;
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 5px solid transparent;
-  border-color: rgb(38, 193, 245) transparent;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
-
-#loading2.display{
   visibility: visible;
 }
 

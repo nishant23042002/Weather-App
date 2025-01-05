@@ -3,21 +3,25 @@ const apiURL = "https://api.openweathermap.org/data/2.5/forecast?units=metric&q=
 const searchField = document.querySelector("#default-search")
 const searchBtn = document.querySelector("#search-btn")
 const loading = document.querySelector("#loading")
+//max limit of option to show city name
 const recentCitiesSearch = 5;
 
 function cityToLocalStorage(city){
     const formattedCity = city.trim().toLowerCase();
+    //getting city name from input
     let recentCites = JSON.parse(localStorage.getItem("recentCities")) || [];
     if(!recentCites.includes(formattedCity)){
         recentCites.unshift(formattedCity)
         if(recentCites.length > recentCitiesSearch){
             recentCites.pop();
         }
+        //setting it to the local storage
         localStorage.setItem("recentCities", JSON.stringify(recentCites));
     }
     dropDown()
 }
 function dropDown(){
+    //pushing it into dropdown
     const recentCity = JSON.parse(localStorage.getItem("recentCities")) || [];
     const dropdown = document.getElementById("recent-cities");
 
@@ -60,6 +64,8 @@ function displayWeather(data){
         document.querySelector("#weather-info1").style.visibility = "visible";
         document.querySelector("#weather-info2").style.visibility = "visible";
 
+
+        //for left-side container
         const temperature = document.querySelector("#temperature")
         temperature.innerHTML = `${Math.round(data.list[0].main.temp)} &degC`
         const cityName = document.getElementById("city")
@@ -91,7 +97,7 @@ function displayWeather(data){
         rain.innerHTML = `<span class="font-bold">Rain - </span> ${data.list[0].weather[0].description}`
 
 
-        //for small cards
+        //for small cards right-side container
         const visibility = document.querySelector("#visibility")
         visibility.innerHTML = `${data.list[0].visibility / 1000} Km`
         const seaLevel = document.querySelector("#sea_level")
@@ -115,6 +121,7 @@ function displayWeather(data){
         const cardInfo = document.querySelector("#box-info");
         cardInfo.innerHTML = ""
 
+        //5 days forecast cards
         dailyForecast.forEach((data, index) => {
             if (index < 5) {
                 const dt = data.dt
@@ -131,9 +138,9 @@ function displayWeather(data){
                 card.innerHTML = `<div class="w-52 h-66 p-3 rounded-3xl bg-blue-100 border-2 border-blue-600 transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-x-3"
                             id="boxes">
                             <h1 class="font-bold" id="day1">${fiveDayForecast}</h1>
-                            <h1 class="font-light">${localTime}</h1>                            
+                            <h1 class="font-bold">${localTime}</h1>                            
                             <div class="flex flex-col gap-2 items-center justify-center" id="box-info">                                
-                                <img src="${weatherIconURL}" alt="#">
+                                <img class="border-2 border-blue-500 rounded-xl" src="${weatherIconURL}" alt="#">
                                 <h1 class="font-bold">Temp : ${temp}</h1>
                                 <h1 class="font-bold">Wind : ${wind}</h1>
                                 <h1 class="font-bold">Humidity : ${humidity}</h1>                                    
@@ -167,6 +174,7 @@ function hideLoading(){
 
 
 function displayError(message){
+    //handling errors
     const errorDiv = document.getElementById("error")
     errorDiv.innerHTML = `<h1 class="font-bold text-center">${message}</h1>`
     errorDiv.style.color = "red";
